@@ -1,0 +1,4 @@
+#define Performances_A380_VERSION_MAJOR @Performances_A380_VERSION_MAJOR@
+#define Performances_A380_VERSION_MINOR @Performances_A380_VERSION_MINOR@
+#define Performances_A380_VERSION_PATCH @Performances_A380_VERSION_PATCH@
+#define Performances_A380_VERSION_TWEAK @Performances_A380_VERSION_TWEAK@
