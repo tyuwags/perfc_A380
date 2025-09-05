@@ -1,7 +1,7 @@
 #include "../include/length.h"
+#include "../include/utils.h"
 
 #include <stdio.h>
-#include <string.h>
 
 #define NUM_UNITS 6
 
@@ -17,18 +17,9 @@ double conversion_factors[NUM_UNITS][NUM_UNITS] = {
     {6076.115, 1852,      1.852,      72913.3858,  1.15077945,   1}                 // naut mi
 };
 
-int get_unit_index(const char *unit) {
-    for (int i = 0; i < NUM_UNITS; i++) {
-        if (strcmp(unit_names[i], unit) == 0) {
-            return i;
-        }
-    }
-    return -1; // not found
-}
-
 double length(double length_in, char* unit_in, char* unit_out) {
-    int from_idx = get_unit_index(unit_in);
-    int to_idx = get_unit_index(unit_out);
+    int from_idx = get_unit_index(unit_in, NUM_UNITS, unit_names);
+    int to_idx = get_unit_index(unit_out, NUM_UNITS, unit_names);
     
     if (from_idx == -1 || to_idx == -1) {
         printf("Unknown unit\n");
