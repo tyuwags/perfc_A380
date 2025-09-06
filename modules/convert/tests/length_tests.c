@@ -84,6 +84,31 @@ START_TEST(test_m_to_naut_mi) {
 }
 END_TEST
 
+START_TEST (test_km_to_in) {
+    double tol = pow(10, -3);
+    double value_in_km = 1000.0;
+    double value_in_inches = length(value_in_km, "km", "in");
+    double convert_back = length(value_in_inches, "in", "km");
+    ck_assert_double_eq_tol(value_in_km, convert_back, tol);
+}
+END_TEST
+
+START_TEST(test_km_to_mi) {
+    double tol = pow(10, -3);
+    double value_in_km = 10000.0;
+    double value_in_miles = length(value_in_km, "km", "mi");
+    double convert_back = length(value_in_miles, "mi", "km");
+    ck_assert_double_eq_tol(value_in_km, convert_back, tol);
+}
+
+START_TEST(test_km_to_naut_mi) {
+    double tol = pow(10, -3);
+    double value_in_km = 10000.0;
+    double value_in_nautique_miles = length(value_in_km, "km", "naut mi");
+    double convert_back = length(value_in_nautique_miles, "naut mi", "km");
+    ck_assert_double_eq_tol(value_in_km, convert_back, tol);
+}
+
 
 Suite* convert_suite(void) {
     Suite *s;
@@ -98,6 +123,10 @@ Suite* convert_suite(void) {
     TCase *tc_m_to_mi;
     TCase *tc_m_to_naut_mi;
 
+    TCase *tc_km_to_in;
+    TCase *tc_km_to_mi;
+    TCase *tc_km_to_naut_mi;
+    
     s = suite_create("Length");
 
     /* ft to m test case */
@@ -131,7 +160,7 @@ Suite* convert_suite(void) {
     suite_add_tcase(s, tc_m_to_km);
 
     /* m to in test case */
-    tc_ft_to_km = tcase_create("m to in");
+    tc_m_to_in = tcase_create("m to in");
     tcase_add_test(tc_m_to_in, test_m_to_in);
     suite_add_tcase(s, tc_m_to_in);
 
@@ -144,6 +173,21 @@ Suite* convert_suite(void) {
     tc_m_to_naut_mi = tcase_create("m to naut mi");
     tcase_add_test(tc_m_to_naut_mi, test_m_to_naut_mi);
     suite_add_tcase(s, tc_m_to_naut_mi);
+    
+    /* km to in test case */
+    tc_km_to_in = tcase_create("km to in");
+    tcase_add_test(tc_km_to_in, test_km_to_in);
+    suite_add_tcase(s, tc_km_to_in);
+
+    /* km to mi test case */
+    tc_km_to_mi = tcase_create("km to mi");
+    tcase_add_test(tc_km_to_mi, test_km_to_mi);
+    suite_add_tcase(s, tc_km_to_mi);
+    
+    /* km to naut mi test case */
+    tc_km_to_naut_mi = tcase_create("km to naut mi");
+    tcase_add_test(tc_km_to_naut_mi, test_km_to_naut_mi);
+    suite_add_tcase(s, tc_km_to_naut_mi);
     
     return s;
 }
