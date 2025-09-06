@@ -1,3 +1,9 @@
+## 0.2.1 (2025-09-06)
+
+### Fix
+
+- Adding new tests for length
+
 ## 0.2.0 (2025-09-06)
 
 ### Feat
