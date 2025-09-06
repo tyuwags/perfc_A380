@@ -86,7 +86,7 @@ END_TEST
 
 START_TEST (test_km_to_in) {
     double tol = pow(10, -3);
-    double value_in_km = 1000.0;
+    double value_in_km = 10000.0;
     double value_in_inches = length(value_in_km, "km", "in");
     double convert_back = length(value_in_inches, "in", "km");
     ck_assert_double_eq_tol(value_in_km, convert_back, tol);
@@ -109,6 +109,31 @@ START_TEST(test_km_to_naut_mi) {
     ck_assert_double_eq_tol(value_in_km, convert_back, tol);
 }
 
+START_TEST (test_in_to_mi) {
+    double tol = pow(10, -3);
+    double value_in_inches = 10000.0;
+    double value_in_miles = length(value_in_inches, "in", "mi");
+    double convert_back = length(value_in_miles, "mi", "in");
+    ck_assert_double_eq_tol(value_in_inches, convert_back, tol);
+}
+END_TEST
+
+START_TEST(test_in_to_naut_mi) {
+    double tol = pow(10, -3);
+    double value_in_inches = 10000.0;
+    double value_in_nautique_miles = length(value_in_inches, "in", "naut mi");
+    double convert_back = length(value_in_nautique_miles, "naut mi", "in");
+    ck_assert_double_eq_tol(value_in_inches, convert_back, tol);
+}
+
+START_TEST(test_mi_to_naut_mi) {
+    double tol = pow(10, -3);
+    double value_in_miles = 10000.0;
+    double value_in_nautique_miles = length(value_in_miles, "mi", "naut mi");
+    double convert_back = length(value_in_nautique_miles, "naut mi", "mi");
+    ck_assert_double_eq_tol(value_in_miles, convert_back, tol);
+}
+
 
 Suite* convert_suite(void) {
     Suite *s;
@@ -126,6 +151,11 @@ Suite* convert_suite(void) {
     TCase *tc_km_to_in;
     TCase *tc_km_to_mi;
     TCase *tc_km_to_naut_mi;
+    
+    TCase *tc_in_to_mi;
+    TCase *tc_in_to_naut_mi;
+
+    TCase *tc_mi_to_naut_mi;
     
     s = suite_create("Length");
 
@@ -188,6 +218,21 @@ Suite* convert_suite(void) {
     tc_km_to_naut_mi = tcase_create("km to naut mi");
     tcase_add_test(tc_km_to_naut_mi, test_km_to_naut_mi);
     suite_add_tcase(s, tc_km_to_naut_mi);
+    
+    /* in to mi test case */
+    tc_in_to_mi = tcase_create("in to mi");
+    tcase_add_test(tc_in_to_mi, test_in_to_mi);
+    suite_add_tcase(s, tc_in_to_mi);
+    
+    /* in to naut mi test case */
+    tc_in_to_naut_mi = tcase_create("in to naut mi");
+    tcase_add_test(tc_in_to_naut_mi, test_in_to_naut_mi);
+    suite_add_tcase(s, tc_in_to_naut_mi);
+    
+    /* mi to naut mi test case */
+    tc_mi_to_naut_mi = tcase_create("mi to naut mi");
+    tcase_add_test(tc_mi_to_naut_mi, test_mi_to_naut_mi);
+    suite_add_tcase(s, tc_mi_to_naut_mi);
     
     return s;
 }
