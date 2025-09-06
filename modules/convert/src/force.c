@@ -5,14 +5,15 @@
 
 #define NUM_UNITS 2
 
-const char *unit_names[NUM_UNITS] = {"lbf", "N"};
-
-double conversion_factors[NUM_UNITS][NUM_UNITS] = {
-    {1,                     4.448222000000000},
-    {0.224808923655339,     1},
-};
-
 double force(double force_in, char* unit_in, char* unit_out) {
+
+    const char *unit_names[NUM_UNITS] = {"lbf", "N"};
+
+    double conversion_factors[NUM_UNITS][NUM_UNITS] = {
+        {1,                     4.448222000000000},
+        {0.224808923655339,     1},
+    };
+
     int from_idx = get_unit_index(unit_in, NUM_UNITS, unit_names);
     int to_idx = get_unit_index(unit_out, NUM_UNITS, unit_names);
 

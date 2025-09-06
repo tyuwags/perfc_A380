@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(Performances_A380 VERSION 0.1.0.0)
+project(Performances_A380 VERSION 0.2.0.0)
 
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED True)
@@ -46,4 +46,5 @@ add_executable(main "${PROJECT_SOURCE_DIR}/src/main.c")
 target_include_directories(main PUBLIC "${PROJECT_BINARY_DIR}" "${PROJECT_SOURCE_DIR}/include") 
 
 enable_testing()
-add_test(NAME StandardUse COMMAND check_convert)
+add_test(NAME Convert_Length COMMAND check_length)
+add_test(NAME Convert_Force COMMAND check_force)
