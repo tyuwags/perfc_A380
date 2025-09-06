@@ -1,0 +1,4 @@
+.cz.toml
+.idea/
+.pre-commit-config.yaml
+Debug/
