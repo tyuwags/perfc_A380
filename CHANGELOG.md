@@ -1,3 +1,16 @@
+## 0.3.0 (2025-09-07)
+
+### Feat
+
+- adding mass conversions
+
+### Refactor
+
+- adding mass to compilation
+- removing unnecessary TCase
+- moving convert implementation to utils
+- adding function convert to utils
+
 ## 0.2.1 (2025-09-06)
 
 ### Fix
