@@ -19,13 +19,6 @@ double length(double length_in, char* unit_in, char* unit_out) {
         {6076.115, 1852,      1.852,      72913.3858,  1.15077945,   1}                 // naut mi
     };
 
-    int from_idx = get_unit_index(unit_in, NUM_UNITS, unit_names);
-    int to_idx = get_unit_index(unit_out, NUM_UNITS, unit_names);
-    
-    if (from_idx == -1 || to_idx == -1) {
-        printf("Unknown unit\n");
-        return -1;
-    }
+    return convert(length_in, unit_in, unit_out, NUM_UNITS, unit_names, conversion_factors); 
 
-    return length_in * conversion_factors[from_idx][to_idx];
 } 
