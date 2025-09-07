@@ -16,7 +16,6 @@ START_TEST(test_force) {
 
 Suite* convert_suite(void) {
     Suite *s;
-    TCase *tc_length;
     TCase *tc_force;
 
     s = suite_create("Force");
