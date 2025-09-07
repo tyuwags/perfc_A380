@@ -1,3 +1,9 @@
+## 0.4.0 (2025-09-07)
+
+### Feat
+
+- adding function velocity
+
 ## 0.3.0 (2025-09-07)
 
 ### Feat
