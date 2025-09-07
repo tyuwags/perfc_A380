@@ -48,3 +48,4 @@ target_include_directories(main PUBLIC "${PROJECT_BINARY_DIR}" "${PROJECT_SOURCE
 enable_testing()
 add_test(NAME Convert_Length COMMAND check_length)
 add_test(NAME Convert_Force COMMAND check_force)
+add_test(NAME Convert_Mass COMMAND check_mass)
