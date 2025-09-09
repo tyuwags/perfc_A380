@@ -42,10 +42,12 @@ configure_file("${PROJECT_SOURCE_DIR}/include/config.h.in" config.h)
 add_subdirectory(modules)
 
 add_executable(main "${PROJECT_SOURCE_DIR}/src/main.c")
-
-target_include_directories(main PUBLIC "${PROJECT_BINARY_DIR}" "${PROJECT_SOURCE_DIR}/include") 
+target_link_libraries(main convert atmos)
+target_include_directories(main PUBLIC modules "${PROJECT_BINARY_DIR}" "${PROJECT_SOURCE_DIR}/include") 
 
 enable_testing()
 add_test(NAME Convert_Length COMMAND check_length)
 add_test(NAME Convert_Force COMMAND check_force)
 add_test(NAME Convert_Mass COMMAND check_mass)
+add_test(NAME Convert_Velocity COMMAND check_velocity)
+add_test(NAME Atmos_Temperature COMMAND check_temperature)
