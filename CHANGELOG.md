@@ -1,3 +1,10 @@
+## 0.5.0 (2025-09-09)
+
+### Feat
+
+- adding isa model for the temperature
+- adding velocity conversions
+
 ## 0.4.1 (2025-09-07)
 
 ### Fix
