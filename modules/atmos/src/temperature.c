@@ -1,6 +1,5 @@
 #include "../include/temperature.h"
 
-#include <stdio.h>
 #include <math.h>
 
 double temperature(double altitude_m, double isa_dev) {
