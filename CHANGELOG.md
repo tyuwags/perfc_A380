@@ -1,3 +1,9 @@
+## 0.7.0 (2025-09-16)
+
+### Feat
+
+- adding function density
+
 ## 0.6.0 (2025-09-16)
 
 ### Feat
