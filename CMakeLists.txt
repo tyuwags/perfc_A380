@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(Performances_A380 VERSION 0.5.0.0)
+project(Performances_A380 VERSION 0.6.0.0)
 
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED True)
@@ -51,3 +51,4 @@ add_test(NAME Convert_Force COMMAND check_force)
 add_test(NAME Convert_Mass COMMAND check_mass)
 add_test(NAME Convert_Velocity COMMAND check_velocity)
 add_test(NAME Atmos_Temperature COMMAND check_temperature)
+add_test(NAME Atmos_Pressure COMMAND check_pressure)

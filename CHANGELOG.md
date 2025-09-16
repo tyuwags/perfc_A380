@@ -1,3 +1,13 @@
+## 0.6.0 (2025-09-16)
+
+### Feat
+
+- adding pressure function
+
+### Refactor
+
+- removing unnecessary stdio.h
+
 ## 0.5.0 (2025-09-09)
 
 ### Feat

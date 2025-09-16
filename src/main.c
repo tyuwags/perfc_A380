@@ -2,8 +2,6 @@
 #include <stdarg.h>
 #include "config.h"
 
-#include "../modules/atmos/include/temperature.h"
-
 int main(int argc, char **argv) {
 	printf("Performance A380 - Projet MGA803\n");
   
@@ -15,6 +13,5 @@ int main(int argc, char **argv) {
         printf("Usage: %s\n", argv[0]);
         return 1;
     }
-    printf("%f", temperature(0.0, 0.0));
     return 0;
 }
