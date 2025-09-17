@@ -42,7 +42,7 @@ configure_file("${PROJECT_SOURCE_DIR}/include/config.h.in" config.h)
 add_subdirectory(modules)
 
 add_executable(main "${PROJECT_SOURCE_DIR}/src/main.c")
-target_link_libraries(main convert atmos)
+target_link_libraries(main convert atmos m)
 target_include_directories(main PUBLIC modules "${PROJECT_BINARY_DIR}" "${PROJECT_SOURCE_DIR}/include") 
 
 enable_testing()
