@@ -1,3 +1,9 @@
+## 0.8.2 (2025-09-17)
+
+### Fix
+
+- adding math library to atmos test
+
 ## 0.8.1 (2025-09-17)
 
 ### Fix
